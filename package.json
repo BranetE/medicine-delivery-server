@@ -1,13 +1,12 @@
 {
   "name": "medicine-delivery-server",
   "version": "1.0.0",
-  "main": "server.js",
-  "type": "module",
+  "main": "dist/server.js",
   "author": "Oleh Kulbaba",
   "scripts": {
     "build": "tsc --project ./",
     "start:dev": "nodemon src/server.ts",
-    "start:prod": "node dist/server.js"
+    "start:prod": "node dist/server.ts"
   },
   "dependencies": {
     "express": "^4.18.3"
