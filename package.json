@@ -1,7 +1,8 @@
 {
   "name": "medicine-delivery-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
+  "type": "module",
   "author": "Oleh Kulbaba",
   "scripts": {
     "build": "tsc --project ./",
