@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "target": "es6",
     "noImplicitAny": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "NodeNext",
     "sourceMap": true,
     "outDir": "dist",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
       "*": ["node_modules/*"]
     }
