@@ -10,7 +10,7 @@ const OrderSchema = new mongoose.Schema({
   },
   products: [
     {
-      productId: { type: Schema.ObjectId, required: true, ref: "Product" },
+      product: { type: Schema.ObjectId, required: true, ref: "Product" },
       quantity: { type: Number, required: true },
       totalPrice: { type: Number, required: true },
     },
@@ -19,5 +19,6 @@ const OrderSchema = new mongoose.Schema({
 
 export const OrderModel = mongoose.model("Order", OrderSchema);
 
-export const createOrder = (values: Record<string, any>) =>
+export const createOrder = (values: Record<string, any>) => {
   new OrderModel(values).save().then((order) => order.toObject());
+};

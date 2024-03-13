@@ -1,40 +1,40 @@
 import mongoose, { Schema } from "mongoose";
-import { ProductModel } from "./product";
-import { title } from "process";
 
 const ShopSchema = new mongoose.Schema({
   title: { type: String },
-  products: [{ type: Schema.ObjectId }],
 });
 
 export const ShopModel = mongoose.model("Shop", ShopSchema);
 
-export const getShops = () => ShopModel.find({});
+export const getShops = () => ShopModel.find();
 
 const initialData = [
   {
+    _id: "65f0faaf31316b923806cf5f",
     title: "The Green Thumb",
   },
   {
+    _id: "65f0faaf31316b923806cf60",
     title: "Stitches & Seams",
   },
   {
+    _id: "65f0faaf31316b923806cf61",
     title: "The Wandering Wardrobe",
   },
   {
+    _id: "65f0faaf31316b923806cf62",
     title: "Clockwork Sparrow",
   },
   {
+    _id: "65f0faaf31316b923806cf63",
     title: "Fizz & Clink",
   },
 ];
 
 initialData.forEach((item) => {
-  ShopModel.create(item)
-    .then((createdItem) => {
-      console.log("Shop created: ", createdItem);
-    })
-    .catch((error) => {
+  ShopModel.findOneAndUpdate(item, {}, { upsert: true, new: true }).catch(
+    (error) => {
       console.error("Error creating product:", error);
-    });
+    }
+  );
 });
